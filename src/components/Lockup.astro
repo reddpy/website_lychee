@@ -1,0 +1,33 @@
+---
+import lockupRaw from '../assets/full_logo.svg?raw';
+
+interface Props {
+  height?: number;
+  class?: string;
+}
+const { height = 30, class: className } = Astro.props;
+
+// Theme only the wordmark type. The mark portion already uses brand colors.
+const themed = lockupRaw.replace(/fill="#393737"/g, 'fill="currentColor"');
+---
+
+<span
+  class={`lockup ${className ?? ''}`}
+  style={`height: ${height}px;`}
+  aria-label="Lychee"
+  role="img"
+  set:html={themed}
+></span>
+
+<style>
+  .lockup {
+    display: inline-block;
+    line-height: 0;
+    color: var(--ink);
+  }
+  .lockup :global(svg) {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+</style>

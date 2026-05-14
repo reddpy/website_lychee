@@ -1,0 +1,34 @@
+---
+import wordmarkRaw from '../assets/typography.svg?raw';
+
+interface Props {
+  height?: number;
+  class?: string;
+}
+const { height = 28, class: className } = Astro.props;
+
+// Recolor only the wordmark type so it themes with light/dark.
+// The provided SVG uses #393737 for the type and brand colors for the mark — leave the rest alone.
+const themed = wordmarkRaw.replace(/fill="#393737"/g, 'fill="currentColor"');
+---
+
+<span
+  class={`wordmark ${className ?? ''}`}
+  style={`height: ${height}px;`}
+  aria-label="Lychee"
+  role="img"
+  set:html={themed}
+></span>
+
+<style>
+  .wordmark {
+    display: inline-block;
+    line-height: 0;
+    color: var(--ink);
+  }
+  .wordmark :global(svg) {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+</style>
