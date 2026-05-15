@@ -30,25 +30,6 @@
   color-scheme: light;
 }
 
-:root[data-theme="dark"] {
-  /* Warm dark — not oxblood, not flat charcoal */
-  --red: #c73e3a;
-  --red-deep: #a8302c;
-  --ink-green: #7e9684;
-  --ink: #f5f0df;          /* cream is the type color in dark */
-
-  --cream: #1d1a17;        /* warm near-black — primary surface */
-  --cream-deep: #25211d;
-  --paper: #221f1b;
-  --rule: #3a3530;
-
-  --ink-2: #d8d1b8;        /* body */
-  --ink-mute: #9d9686;     /* muted */
-
-  color-scheme: dark;
-}
-
-html { transition: background-color 200ms ease; }
 
 *,
 *::before,
@@ -194,35 +175,6 @@ p {
   width: auto;
   display: block;
 }
-
-/* Theme toggle */
-.toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink-soft);
-  border: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
-  cursor: pointer;
-  transition: color 160ms ease, border-color 160ms ease, transform 140ms ease;
-}
-.toggle:hover {
-  color: var(--red);
-  border-color: var(--ink);
-  transform: translateY(-1px);
-}
-.toggle:focus-visible {
-  outline: 2px solid var(--red);
-  outline-offset: 2px;
-}
-
-.i-sun, .i-moon { display: none; }
-:root[data-theme="light"] .i-moon { display: block; }
-:root[data-theme="dark"] .i-sun { display: block; }
 
 /* skip link */
 .skip {
@@ -423,13 +375,6 @@ p {
     0 18px 40px -22px rgba(0, 0, 0, 0.22),
     0 40px 70px -40px rgba(0, 0, 0, 0.18);
   z-index: -1;
-}
-
-:root[data-theme="dark"] .note::before {
-  box-shadow:
-    0 1px 0 color-mix(in oklab, white 4%, transparent) inset,
-    0 18px 40px -22px rgba(0, 0, 0, 0.6),
-    0 40px 70px -40px rgba(0, 0, 0, 0.5);
 }
 
 .note .section-title {
