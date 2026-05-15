@@ -1,6 +1,5 @@
 import './style.css';
 import lockupRaw from './assets/full_logo.svg?raw';
-import appIconRaw from './assets/app_icon.svg?raw';
 import shotSrcset from './assets/base_app_color_padding.png?w=768;1280;1600;1920;2400&as=srcset';
 import shotSrc from './assets/base_app_color_padding.png?w=1600&as=src';
 
@@ -8,10 +7,6 @@ const themedLockup = lockupRaw.replace(/fill="#393737"/g, 'fill="currentColor"')
 
 document.querySelectorAll<HTMLElement>('[data-lockup]').forEach((el) => {
   el.innerHTML = themedLockup;
-});
-
-document.querySelectorAll<HTMLElement>('[data-app-icon]').forEach((el) => {
-  el.innerHTML = appIconRaw;
 });
 
 document.querySelectorAll<HTMLElement>('[data-year]').forEach((el) => {
