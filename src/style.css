@@ -483,7 +483,17 @@ p {
   line-height: 1.15;
   letter-spacing: -0.005em;
   color: var(--ink);
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.35rem;
+}
+
+/* A short, concrete description that follows each motion-title */
+.motion-blurb {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+  max-width: 38rem;
 }
 
 /* Clusters & stack */
@@ -537,6 +547,10 @@ p {
 
 .tall .motion-title {
   font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+}
+
+.tall .motion-blurb {
+  font-size: clamp(0.9rem, 1vw, 0.98rem);
 }
 
 /* Cluster: lead wide on top, supporting pair below */
