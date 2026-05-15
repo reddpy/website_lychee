@@ -34,42 +34,42 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   </g>
 
   <!-- Tagline: muted lead-in + red italic emphasis -->
-  <text x="${W / 2}" y="248"
+  <text x="${W / 2}" y="250"
         text-anchor="middle"
         font-family="'Source Serif 4', 'Source Serif Pro', Georgia, serif"
-        font-size="34"
+        font-size="40"
         fill="${MUTED}">A free local-first notes app. <tspan font-style="italic" fill="${RED}">Your words, your machine.</tspan></text>
 
   <!-- Horizontal metadata strip directly above the app peek -->
-  <!-- MIT license chip (outlined) -->
-  <rect x="456" y="294" width="118" height="32" rx="16" ry="16"
-        fill="none" stroke="${RED}" stroke-width="1.5"/>
-  <text x="515" y="315"
+  <!-- MIT license chip (outlined, larger) -->
+  <rect x="438" y="290" width="148" height="40" rx="20" ry="20"
+        fill="none" stroke="${RED}" stroke-width="2"/>
+  <text x="512" y="316"
         text-anchor="middle"
         font-family="'Inter Tight', 'Inter', -apple-system, 'Helvetica Neue', sans-serif"
-        font-size="14"
+        font-size="18"
         font-weight="600"
-        letter-spacing="1.2"
+        letter-spacing="1.4"
         fill="${RED}">MIT LICENSE</text>
 
-  <!-- Apple circle (outlined) -->
-  <circle cx="624" cy="310" r="20" fill="none" stroke="${RED}" stroke-width="1.5"/>
-  <g transform="translate(612, 298) scale(1)">
+  <!-- Apple circle (outlined, larger) -->
+  <circle cx="630" cy="310" r="25" fill="none" stroke="${RED}" stroke-width="2"/>
+  <g transform="translate(615, 295) scale(1.25)">
     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="${RED}"/>
   </g>
 
-  <!-- Windows circle (outlined) -->
-  <circle cx="674" cy="310" r="20" fill="none" stroke="${RED}" stroke-width="1.5"/>
-  <g transform="translate(662, 298) scale(1)">
+  <!-- Windows circle (outlined, larger) -->
+  <circle cx="690" cy="310" r="25" fill="none" stroke="${RED}" stroke-width="2"/>
+  <g transform="translate(675, 295) scale(1.25)">
     <rect x="2.5" y="2.5" width="8.5" height="8.5" fill="${RED}"/>
     <rect x="13" y="2.5" width="8.5" height="8.5" fill="${RED}"/>
     <rect x="2.5" y="13" width="8.5" height="8.5" fill="${RED}"/>
     <rect x="13" y="13" width="8.5" height="8.5" fill="${RED}"/>
   </g>
 
-  <!-- Linux circle (outlined): red Tux silhouette with cream belly -->
-  <circle cx="724" cy="310" r="20" fill="none" stroke="${RED}" stroke-width="1.5"/>
-  <g transform="translate(712, 298) scale(1)">
+  <!-- Linux circle (outlined, larger): red Tux silhouette with cream belly -->
+  <circle cx="750" cy="310" r="25" fill="none" stroke="${RED}" stroke-width="2"/>
+  <g transform="translate(735, 295) scale(1.25)">
     <path d="M12 1.5 C 8.5 1.5 7 3.8 7 6.2 C 7 7.6 7.4 8.8 8 9.6 C 5.5 10.4 4 12.8 4 16 C 4 19.6 6 22.5 8.5 22.5 L 15.5 22.5 C 18 22.5 20 19.6 20 16 C 20 12.8 18.5 10.4 16 9.6 C 16.6 8.8 17 7.6 17 6.2 C 17 3.8 15.5 1.5 12 1.5 Z" fill="${RED}"/>
     <ellipse cx="12" cy="15.5" rx="3.2" ry="5" fill="${CREAM}"/>
     <circle cx="10.5" cy="5.5" r="0.55" fill="${CREAM}"/>
