@@ -13,12 +13,18 @@
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Lychee Note" />
         <meta property="og:url" content="https://lycheenote.com/" />
-        <meta property="og:title" content="Simple, Beautiful, and Free Local Notes App" />
+        <meta
+            property="og:title"
+            content="Simple, Beautiful, and Free Local Notes App"
+        />
         <meta
             property="og:description"
             content="A small, fast notebook for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
         />
-        <meta property="og:image" content="https://lycheenote.com/og-image.png" />
+        <meta
+            property="og:image"
+            content="https://lycheenote.com/og-image.png"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
@@ -27,12 +33,18 @@
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Simple, Beautiful, and Free Local Notes App" />
+        <meta
+            name="twitter:title"
+            content="Simple, Beautiful, and Free Local Notes App"
+        />
         <meta
             name="twitter:description"
             content="A small, fast notebook for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
         />
-        <meta name="twitter:image" content="https://lycheenote.com/og-image.png" />
+        <meta
+            name="twitter:image"
+            content="https://lycheenote.com/og-image.png"
+        />
         <meta
             name="twitter:image:alt"
             content="Lychee Note — a free local-first notes app. Your words, your machine."
@@ -300,29 +312,683 @@
                         <li>
                             <span class="essay-num" aria-hidden="true">01</span>
                             <p>
-                                <strong>Easy to keep.</strong> Your notes are
-                                saved on your computer in a simple, portable
-                                file.
+                                <strong>Easy to keep.</strong> A single,
+                                portable file on your computer.
                             </p>
                         </li>
                         <li>
                             <span class="essay-num" aria-hidden="true">02</span>
                             <p>
                                 <strong>Private by default.</strong> No
-                                tracking, no analytics, no hidden data
-                                collection.
+                                tracking. No analytics. Nothing watching.
                             </p>
                         </li>
                         <li>
                             <span class="essay-num" aria-hidden="true">03</span>
                             <p>
-                                <strong>Works offline.</strong> Lychee keeps
-                                working without the internet, because your notes
-                                should not depend on a server.
+                                <strong>Works offline.</strong> Your notes don't
+                                depend on a server.
                             </p>
                         </li>
                     </ol>
                 </div>
+            </section>
+
+            <hr class="rule shell-rule" />
+
+            <!-- COMPARISON -->
+            <section
+                id="compare"
+                class="compare shell"
+                aria-labelledby="compare-heading"
+            >
+                <svg
+                    width="0"
+                    height="0"
+                    aria-hidden="true"
+                    focusable="false"
+                    style="position: absolute"
+                >
+                    <defs>
+                        <symbol id="cmp-yes" viewBox="0 0 24 24">
+                            <path
+                                d="M5 12.5l4.5 4.5L19 7.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </symbol>
+                        <symbol id="cmp-part" viewBox="0 0 24 24">
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="8.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M12 3.5a8.5 8.5 0 0 1 0 17z"
+                                fill="currentColor"
+                                stroke="none"
+                            />
+                        </symbol>
+                        <symbol id="cmp-no" viewBox="0 0 24 24">
+                            <path
+                                d="M6 12h12"
+                                stroke="currentColor"
+                                stroke-width="2.6"
+                                stroke-linecap="round"
+                            />
+                        </symbol>
+                    </defs>
+                </svg>
+
+                <div class="compare-head">
+                    <p class="eyebrow">Comparison</p>
+                    <h2 id="compare-heading" class="section-title">
+                        A desktop notes app,<br />
+                        <em>and proud of it.</em>
+                    </h2>
+                    <p class="compare-lede">
+                        Here's how Lychee fits among the apps you already know.
+                    </p>
+                    <p class="compare-sub ui">
+                        Built for Mac, Windows, and Linux. Your notes live in
+                        one local file — export to Markdown anytime.
+                    </p>
+                </div>
+
+                <div class="compare-table-wrap">
+                    <table class="compare-table">
+                        <caption class="visually-hidden">
+                            Lychee compared to Notion, Obsidian, and Apple Notes
+                            across twelve features.
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cmp-feat-head">
+                                    <span class="visually-hidden">Feature</span>
+                                </th>
+                                <th scope="col" class="cmp-app is-lychee">
+                                    Lychee
+                                </th>
+                                <th scope="col" class="cmp-app">Notion</th>
+                                <th scope="col" class="cmp-app">Obsidian</th>
+                                <th scope="col" class="cmp-app">Apple Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Local-first storage</span
+                                    >
+                                    <span class="cmp-feat-desc"
+                                        >data on your machine</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual"
+                                        >one file (SQLite)</span
+                                    >
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                    <span class="cmp-qual"
+                                        >proprietary cloud</span
+                                    >
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">vault</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">iCloud</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Works fully offline</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual"
+                                        >pre-opened only</span
+                                    >
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Free forever</span
+                                    >
+                                    <span class="cmp-feat-desc"
+                                        >all core features</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">5 MB cap</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">full app</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Open source</span
+                                    >
+                                    <span class="cmp-feat-desc"
+                                        >community-auditable</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">MIT License</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                    <span class="cmp-qual">freeware</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >No account required</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                    <span class="cmp-qual">Apple ID</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >No tracking</span
+                                    >
+                                    <span class="cmp-feat-desc"
+                                        >no analytics, no telemetry</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">opt-in only</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual"
+                                        >Apple telemetry</span
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Markdown export</span
+                                    >
+                                    <span class="cmp-feat-desc"
+                                        >move your notes out anytime</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">lossy</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">native .md</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">basic</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Native markdown editor</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">shortcuts only</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                    <span class="cmp-qual">export only</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Mac · Windows · Linux desktop</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">all three</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">no Linux</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                    <span class="cmp-qual">Mac only</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Mobile companion</span
+                                    >
+                                    <span class="cmp-feat-desc"
+                                        >iOS &amp; Android</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                    <span class="cmp-qual">desktop only</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">iOS only</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Real-time collaboration</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">iCloud</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="cmp-feat">
+                                    <span class="cmp-feat-name"
+                                        >Built-in AI</span
+                                    >
+                                </th>
+                                <td
+                                    class="cmp-cell is-lychee"
+                                    data-app="Lychee"
+                                >
+                                    <svg
+                                        class="cmp-glyph is-no"
+                                        aria-label="No"
+                                    >
+                                        <use href="#cmp-no" />
+                                    </svg>
+                                </td>
+                                <td class="cmp-cell" data-app="Notion">
+                                    <svg
+                                        class="cmp-glyph is-yes"
+                                        aria-label="Yes"
+                                    >
+                                        <use href="#cmp-yes" />
+                                    </svg>
+                                    <span class="cmp-qual">Business+</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Obsidian">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual">via plugins</span>
+                                </td>
+                                <td class="cmp-cell" data-app="Apple Notes">
+                                    <svg
+                                        class="cmp-glyph is-part"
+                                        aria-label="Partial"
+                                    >
+                                        <use href="#cmp-part" />
+                                    </svg>
+                                    <span class="cmp-qual"
+                                        >Apple Intelligence</span
+                                    >
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="compare-footnote measure">
+                    Plenty of other good ones out there:<br />
+                    Bear, Evernote, Logseq, Anytype, Coda, Craft, and more.
+                    <br />Lychee's bet is the one that stays
+                    <em>small, quiet, and yours.</em>
+                </p>
             </section>
 
             <hr class="rule shell-rule" />

@@ -117,6 +117,7 @@ p {
 .manifesto .eyebrow { color: var(--red); }
 .motion .eyebrow { color: var(--ink-green); }
 .essay-section .eyebrow { color: var(--ink-green); }
+.compare .eyebrow { color: var(--ink-green); }
 
 .rule {
   border: none;
@@ -709,6 +710,330 @@ p {
   .essay-points {
     grid-template-columns: 1fr;
     gap: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+/* COMPARISON
+   A book-page table: warm paper surface, serif voice, soft rules.
+   Desktop: 5-column grid. Mobile: horizontal scroll with the
+   feature column and Lychee column pinned to the left edge. */
+.compare {
+  padding-top: clamp(3rem, 7vw, 5rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.compare-head {
+  max-width: 44rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+}
+.compare-head .section-title { margin-top: 0.6rem; margin-bottom: 1.2rem; }
+
+.compare-lede {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 auto 0.8rem;
+  max-width: 36rem;
+}
+
+.compare-sub {
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.01em;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+.compare-sub em {
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.compare-table-wrap {
+  position: relative;
+  max-width: 880px;
+  margin-inline: auto;
+  border-radius: 16px;
+  /* Paper card vocabulary borrowed from .note */
+  background:
+    radial-gradient(120% 60% at 50% -10%, color-mix(in oklab, var(--red) 5%, transparent), transparent 60%),
+    radial-gradient(120% 60% at 50% 110%, color-mix(in oklab, var(--ink-green) 6%, transparent), transparent 60%),
+    var(--paper);
+  border: 1px solid color-mix(in oklab, var(--rule) 80%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 35%, transparent) inset,
+    0 16px 36px -28px rgba(0, 0, 0, 0.18),
+    0 36px 60px -50px rgba(0, 0, 0, 0.16);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.compare-table thead th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--ink);
+  text-align: center;
+  padding: 1.1rem 0.7rem 1rem;
+  background: transparent;
+  border-bottom: 1px solid color-mix(in oklab, var(--rule) 70%, transparent);
+  vertical-align: bottom;
+  letter-spacing: -0.005em;
+}
+
+.compare-table thead th.cmp-feat-head {
+  border-bottom-color: transparent;
+}
+
+.compare-table thead th.is-lychee {
+  color: var(--red);
+  font-style: italic;
+  font-weight: 700;
+  background:
+    linear-gradient(to bottom, color-mix(in oklab, var(--red) 10%, transparent), color-mix(in oklab, var(--red) 4%, transparent));
+  border-bottom-color: color-mix(in oklab, var(--red) 55%, transparent);
+  position: relative;
+}
+.compare-table thead th.is-lychee::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.compare-table tbody th.cmp-feat {
+  text-align: left;
+  vertical-align: middle;
+  padding: 1.05rem 1.4rem 1.05rem 1.3rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--ink);
+  border-bottom: 1px solid color-mix(in oklab, var(--rule) 55%, transparent);
+  width: 38%;
+  min-width: 13rem;
+  background: transparent;
+}
+.cmp-feat-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.003em;
+}
+.cmp-feat-desc {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--ink-mute);
+  margin-top: 0.18rem;
+  letter-spacing: 0;
+}
+
+.compare-table tbody td.cmp-cell {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1.05rem 0.85rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--rule) 55%, transparent);
+  background: transparent;
+  width: 16%;
+  transition: background 160ms ease;
+}
+
+.compare-table tbody tr:hover td.cmp-cell {
+  background: color-mix(in oklab, var(--red) 4%, var(--paper));
+}
+.compare-table tbody tr:last-child th.cmp-feat,
+.compare-table tbody tr:last-child td.cmp-cell {
+  border-bottom: none;
+}
+
+/* Lychee column is opaque (not just tinted transparent) so the mobile
+   sticky position can occlude scrolling columns cleanly. */
+.compare-table tbody td.is-lychee {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--red) 8%, var(--paper)),
+    color-mix(in oklab, var(--red) 3%, var(--paper))
+  );
+}
+.compare-table tbody tr:hover td.is-lychee {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--red) 14%, var(--paper)),
+    color-mix(in oklab, var(--red) 7%, var(--paper))
+  );
+}
+.compare-table tbody tr:hover th.cmp-feat {
+  background: color-mix(in oklab, var(--red) 3%, var(--paper));
+}
+
+/* Glyphs — soft, drawn-feel marks */
+.cmp-glyph {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+.cmp-glyph.is-yes { color: var(--ink-green); }
+.cmp-glyph.is-part { color: var(--ink-mute); opacity: 0.85; }
+.cmp-glyph.is-no { color: var(--red); opacity: 0.7; }
+
+.is-lychee .cmp-glyph.is-yes { color: var(--ink-green); }
+.is-lychee .cmp-glyph.is-no { color: var(--red); opacity: 1; }
+
+.cmp-qual {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  color: var(--ink-mute);
+  margin-top: 0.32rem;
+  letter-spacing: 0;
+}
+.is-lychee .cmp-qual {
+  color: color-mix(in oklab, var(--red) 70%, var(--ink-mute));
+}
+
+.compare-footnote {
+  margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.compare-footnote em {
+  font-style: italic;
+  color: var(--ink-green);
+}
+.compare-footnote strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Mobile: horizontal scroll with feature + Lychee columns pinned.
+   The user always sees what they're comparing against (Lychee +
+   the feature label) and swipes left/right to reveal Notion,
+   Obsidian, Apple Notes. */
+@media (max-width: 880px) {
+  .compare-table-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* Hint: more table to the right, the gradient fades into the cream */
+    mask-image: linear-gradient(
+      to right,
+      #000 0,
+      #000 calc(100% - 22px),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0,
+      #000 calc(100% - 22px),
+      transparent 100%
+    );
+  }
+
+  .compare-table {
+    min-width: 30rem;
+    width: max-content;
+    font-size: 0.9rem;
+  }
+
+  .compare-table thead th,
+  .compare-table tbody th.cmp-feat,
+  .compare-table tbody td.cmp-cell {
+    width: auto;
+    min-width: 0;
+  }
+
+  .compare-table tbody th.cmp-feat {
+    width: 11rem;
+    min-width: 11rem;
+    padding: 0.95rem 1rem 0.95rem 1.1rem;
+  }
+
+  .compare-table thead th.cmp-app,
+  .compare-table tbody td.cmp-cell {
+    width: 6.4rem;
+    min-width: 6.4rem;
+    padding: 0.95rem 0.5rem;
+  }
+
+  /* Sticky pin: feature column + Lychee column.
+     Backgrounds must be opaque so scrolling content doesn't bleed through. */
+  .compare-table thead th.cmp-feat-head,
+  .compare-table tbody th.cmp-feat {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--paper);
+  }
+
+  .compare-table thead th.is-lychee,
+  .compare-table tbody td.is-lychee {
+    position: sticky;
+    left: 11rem;
+    z-index: 2;
+    /* Override the diagonal gradient with an opaque paper-tinted bg
+       so it occludes columns sliding under it */
+    background:
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--red) 8%, var(--paper)),
+        color-mix(in oklab, var(--red) 5%, var(--paper))
+      );
+  }
+
+  /* Soft separator between the sticky pair and the scrolling columns */
+  .compare-table thead th.is-lychee,
+  .compare-table tbody td.is-lychee {
+    box-shadow: 8px 0 12px -8px color-mix(in oklab, var(--ink) 18%, transparent);
+  }
+
+  .compare-table thead th.is-lychee::after {
+    bottom: -2px;
+  }
+
+  .cmp-feat-name {
+    font-size: 0.95rem;
+  }
+  .cmp-feat-desc {
+    font-size: 0.76rem;
+  }
+  .cmp-qual {
+    font-size: 0.7rem;
   }
 }
 
