@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
-        <title>Lychee — Note App</title>
+        <title>Lychee — a notebook you'll keep</title>
         <meta
             name="description"
-            content="A small, fast notes app for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
+            content="A small, fast notebook for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
         />
         <meta property="og:title" content="Lychee — a notebook you'll keep" />
         <meta
             property="og:description"
-            content="A small, fast notes app for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
+            content="A small, fast notebook for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -150,7 +150,7 @@
                         A local-first notes app. Your words, your machine.
                     </p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary">
+                        <a href="#download" class="btn btn-primary">
                             <svg
                                 width="14"
                                 height="14"
@@ -189,8 +189,8 @@
                     </div>
                     <p class="hero-foot ui">
                         Free and open source.
-                        <span aria-hidden="true">·</span> Mac, Windows, Linux.
-                        <span aria-hidden="true">·</span> MIT-License.
+                        <span aria-hidden="true">·</span> Mac, Windows, and
+                        Linux. <span aria-hidden="true">·</span> MIT licensed.
                     </p>
                 </div>
             </section>
@@ -226,8 +226,7 @@
                     <figure class="wide">
                         <h3 class="motion-title">Your Notes, Your Focus</h3>
                         <p class="motion-blurb">
-                            Lychee's user experience is catered towards helping
-                            you focus.<br />
+                            Lychee is designed to help you focus.<br />
                             No distractions.
                         </p>
                         <img
@@ -243,8 +242,8 @@
                         <figure class="wide">
                             <h3 class="motion-title">Expressive Formatting</h3>
                             <p class="motion-blurb">
-                                Bold, italic, code, links — for notes that
-                                provide better understanding.
+                                Bold, italic, code, links — for notes that read
+                                clearer.
                             </p>
                             <img
                                 src="/app_gifs/text-formatting.gif"
@@ -258,7 +257,7 @@
                             <figure class="tall tall-contain">
                                 <h3 class="motion-title">Slash on Command</h3>
                                 <p class="motion-blurb">
-                                    Build notes without leaving the cursor.
+                                    Build notes without leaving the keyboard.
                                 </p>
                                 <img
                                     src="/app_gifs/slash-menu.gif"
@@ -337,46 +336,71 @@
                 class="manifesto shell"
                 aria-labelledby="manifesto-heading"
             >
-                <div class="note">
-                    <p class="eyebrow">Philosophy</p>
-                    <h2 id="manifesto-heading" class="section-title">
-                        A note from <em>the maker.</em>
+                <div class="note" data-reveal>
+                    <h2
+                        id="manifesto-heading"
+                        class="section-title"
+                        data-reveal
+                        data-reveal-d="2"
+                    >
+                        <em>Creator's Note</em>
                     </h2>
 
                     <div class="note-body">
-                        <p class="note-lede">
-                            Most apps today feel like they want something from
-                            you.
+                        <p data-reveal data-reveal-d="3">
+                            Apps today feel like they want something from you.
                         </p>
 
-                        <ul class="note-list">
+                        <ul class="note-list" data-reveal data-reveal-d="4">
                             <li>Your attention.</li>
                             <li>Your data.</li>
                             <li>Your time.</li>
                         </ul>
 
-                        <p>
-                            Lychee is inspired by how software used to feel,
-                            before every product was designed to extract more
-                            from you.
-                        </p>
-                        <p>
-                            You downloaded something useful. It worked. It
-                            stayed yours.
-                        </p>
-                        <p>
-                            That is the promise behind Lychee: a beautiful notes
-                            app with no tracking, no hidden agenda, and no
-                            reason to take more than it needs.
-                        </p>
-                        <p>
-                            Just a simple place to write, made to stay free and
-                            yours.
+                        <div
+                            class="note-ornament"
+                            aria-hidden="true"
+                            data-reveal
+                            data-reveal-d="5"
+                        >
+                            <span>🌸</span>
+                        </div>
+
+                        <p data-reveal data-reveal-d="5">
+                            Lychee is inspired by how software used to feel —
+                            useful, quiet, and yours.
                         </p>
 
-                        <p class="note-signoff">
-                            <em>Let's love Lychee.</em>
+                        <ul class="note-list" data-reveal data-reveal-d="6">
+                            <li>No tracking.</li>
+                            <li>No hidden agenda.</li>
+                            <li>No reason to take more than it needs.</li>
+                        </ul>
+
+                        <p data-reveal data-reveal-d="7">
+                            Just a beautiful place to write, made to stay free
+                            and yours.
                         </p>
+
+                        <p class="note-signoff" data-reveal data-reveal-d="8">
+                            <em>Let's Love Lychee</em>
+                        </p>
+
+                        <div
+                            class="note-mark"
+                            aria-hidden="true"
+                            data-reveal
+                            data-reveal-d="8"
+                        >
+                            <img
+                                src="/favicon.svg"
+                                alt=""
+                                width="56"
+                                height="56"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -393,24 +417,37 @@
                     <p class="eyebrow">Local-first</p>
                     <h2 id="lf-heading" class="section-title">
                         Your notes,<br />
-                        <em>on your machine.</em>
+                        <em>your machine.</em>
                     </h2>
                 </div>
 
-                <div class="essay-body measure">
-                    <p>
-                        <strong>SQLite.</strong> Your notes live in a plain
-                        SQLite file on your machine — an open format, easy to
-                        back up or migrate.
-                    </p>
-                    <p>
-                        <strong>Private.</strong> No telemetry, no analytics, no
-                        hidden data collection.
-                    </p>
-                    <p>
-                        <strong>Offline.</strong> Works without a network.
-                        There's no online mode to fall back from.
-                    </p>
+                <div class="essay-body">
+                    <ol class="essay-points">
+                        <li>
+                            <span class="essay-num" aria-hidden="true">01</span>
+                            <p>
+                                <strong>Easy to keep.</strong> Your notes are
+                                saved on your computer in a simple, portable
+                                file.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="essay-num" aria-hidden="true">02</span>
+                            <p>
+                                <strong>Private by default.</strong> No
+                                tracking, no analytics, no hidden data
+                                collection.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="essay-num" aria-hidden="true">03</span>
+                            <p>
+                                <strong>Works offline.</strong> Lychee keeps
+                                working without the internet, because your notes
+                                should not depend on a server.
+                            </p>
+                        </li>
+                    </ol>
                 </div>
             </section>
 
@@ -432,8 +469,8 @@
                             Taste <em>Lychee.</em>
                         </h2>
                         <p class="measure">
-                            Made to stay free and yours. On Mac, Windows, and
-                            Linux.
+                            Made to stay free and yours.<br />
+                            On Mac, Windows, and Linux.
                         </p>
                         <div class="download-actions">
                             <a
@@ -493,7 +530,7 @@
                         data-lockup
                     ></span>
                 </a>
-                <p class="foot-tag">Made by people with bookshelves.</p>
+                <p class="foot-tag">Made with 🌸</p>
             </div>
 
             <div class="foot-bottom ui">

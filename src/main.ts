@@ -30,3 +30,22 @@ document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn
     }
   });
 });
+
+const reveals = document.querySelectorAll<HTMLElement>('[data-reveal]');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reveals.length && !reduceMotion && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          io.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.18, rootMargin: '0px 0px -8% 0px' },
+  );
+  reveals.forEach((el) => io.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add('is-revealed'));
+}
