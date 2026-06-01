@@ -762,6 +762,105 @@ p {
   color: var(--ink-2);
 }
 
+/* Switch cards — the homepage's lightweight, on-brand answer to
+   "why not just use X?". Three generous paper cards, no scorecard. */
+.switch-cards {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+}
+.switch-card {
+  border-radius: 16px;
+  padding: clamp(1.4rem, 2.4vw, 1.9rem);
+  background:
+    radial-gradient(120% 70% at 50% -10%, color-mix(in oklab, var(--red) 5%, transparent), transparent 60%),
+    var(--paper);
+  border: 1px solid color-mix(in oklab, var(--rule) 80%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 35%, transparent) inset,
+    0 16px 36px -30px rgba(0, 0, 0, 0.18);
+}
+.switch-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.005em;
+}
+.switch-card-title em {
+  font-style: italic;
+  color: var(--red);
+}
+.switch-card p {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Full matrix tucked behind a disclosure — depth for the curious,
+   collapsed by default so the homepage stays calm. */
+.compare-details {
+  max-width: 880px;
+  margin: clamp(2rem, 4vw, 2.8rem) auto 0;
+}
+.compare-details > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  list-style: none;
+  margin-inline: auto;
+  width: max-content;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--rule) 85%, transparent);
+  background: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+.compare-details > summary::-webkit-details-marker { display: none; }
+.compare-details > summary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+  transition: transform 180ms ease;
+}
+.compare-details[open] > summary::after {
+  transform: rotate(-135deg) translate(-1px, -1px);
+}
+.compare-details > summary:hover {
+  border-color: color-mix(in oklab, var(--red) 45%, transparent);
+  color: var(--red);
+}
+.compare-details > summary:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+.compare-details .compare-table-wrap {
+  margin-top: clamp(2.4rem, 5vw, 3.4rem);
+}
+
+@media (max-width: 720px) {
+  .switch-cards {
+    grid-template-columns: 1fr;
+    max-width: 30rem;
+  }
+}
+
 .compare-table-wrap {
   position: relative;
   max-width: 880px;
@@ -923,117 +1022,143 @@ p {
   color: color-mix(in oklab, var(--red) 70%, var(--ink-mute));
 }
 
-.compare-footnote {
-  margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--ink-soft);
-  text-align: center;
-}
-.compare-footnote em {
-  font-style: italic;
-  color: var(--ink-green);
-}
-.compare-footnote strong {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--ink);
-}
-
-/* Mobile: horizontal scroll with feature + Lychee columns pinned.
-   The user always sees what they're comparing against (Lychee +
-   the feature label) and swipes left/right to reveal Notion,
-   Obsidian, Apple Notes. */
+/* Tablet (641–880px): the 5-column table simply fits the available
+   width — no horizontal scroll, just tighter type and spacing. */
 @media (max-width: 880px) {
-  .compare-table-wrap {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    /* Hint: more table to the right, the gradient fades into the cream */
-    mask-image: linear-gradient(
-      to right,
-      #000 0,
-      #000 calc(100% - 22px),
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      #000 0,
-      #000 calc(100% - 22px),
-      transparent 100%
-    );
-  }
-
   .compare-table {
-    min-width: 30rem;
-    width: max-content;
-    font-size: 0.9rem;
+    font-size: 0.86rem;
+  }
+  .compare-table thead th {
+    padding: 0.9rem 0.35rem 0.8rem;
+    font-size: 0.88rem;
+  }
+  .compare-table tbody th.cmp-feat {
+    width: 34%;
+    min-width: 0;
+    padding: 0.9rem 0.75rem;
+  }
+  .compare-table tbody td.cmp-cell {
+    width: 16.5%;
+    padding: 0.9rem 0.35rem;
+  }
+  .cmp-feat-name { font-size: 0.9rem; }
+  .cmp-feat-desc { font-size: 0.74rem; }
+  .cmp-qual { font-size: 0.68rem; }
+  .cmp-glyph { width: 19px; height: 19px; }
+}
+
+/* Phone (≤ 640px): the table reflows into stacked feature cards.
+   Each row becomes a self-contained card; each cell becomes one
+   labelled line (app name on the left via the data-app attribute,
+   mark + qualifier on the right). No horizontal scrolling, and the
+   thing you're comparing — the feature — heads every card. */
+@media (max-width: 640px) {
+  .compare-table-wrap {
+    max-width: 30rem;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
-  .compare-table thead th,
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tbody tr,
   .compare-table tbody th.cmp-feat,
   .compare-table tbody td.cmp-cell {
+    display: block;
     width: auto;
-    min-width: 0;
+  }
+  .compare-table thead { display: none; }
+
+  .compare-table {
+    font-size: 0.92rem;
   }
 
-  .compare-table tbody th.cmp-feat {
-    width: 11rem;
-    min-width: 11rem;
-    padding: 0.95rem 1rem 0.95rem 1.1rem;
-  }
-
-  .compare-table thead th.cmp-app,
-  .compare-table tbody td.cmp-cell {
-    width: 6.4rem;
-    min-width: 6.4rem;
-    padding: 0.95rem 0.5rem;
-  }
-
-  /* Sticky pin: feature column + Lychee column.
-     Backgrounds must be opaque so scrolling content doesn't bleed through. */
-  .compare-table thead th.cmp-feat-head,
-  .compare-table tbody th.cmp-feat {
-    position: sticky;
-    left: 0;
-    z-index: 2;
+  .compare-table tbody tr {
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    overflow: hidden;
     background: var(--paper);
+    border: 1px solid color-mix(in oklab, var(--rule) 80%, transparent);
+    box-shadow:
+      0 1px 0 color-mix(in oklab, white 35%, transparent) inset,
+      0 12px 28px -24px rgba(0, 0, 0, 0.18);
   }
 
-  .compare-table thead th.is-lychee,
+  /* Card header — the feature being compared */
+  .compare-table tbody th.cmp-feat,
+  .compare-table tbody tr:last-child th.cmp-feat {
+    text-align: left;
+    padding: 0.85rem 1rem 0.7rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--rule) 50%, transparent);
+    background: var(--cream-deep);
+  }
+
+  /* Each app — one labelled line inside the card */
+  .compare-table tbody td.cmp-cell,
+  .compare-table tbody tr:last-child td.cmp-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: right;
+    padding: 0.62rem 1rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--rule) 35%, transparent);
+  }
+  .compare-table tbody tr td.cmp-cell:last-child {
+    border-bottom: none;
+  }
+  .compare-table tbody td.cmp-cell::before {
+    content: attr(data-app);
+    margin-right: auto;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--ink);
+    text-align: left;
+  }
+
+  /* Lychee's line stays accented */
   .compare-table tbody td.is-lychee {
-    position: sticky;
-    left: 11rem;
-    z-index: 2;
-    /* Override the diagonal gradient with an opaque paper-tinted bg
-       so it occludes columns sliding under it */
-    background:
-      linear-gradient(
-        to right,
-        color-mix(in oklab, var(--red) 8%, var(--paper)),
-        color-mix(in oklab, var(--red) 5%, var(--paper))
-      );
+    position: static;
+    box-shadow: none;
+    background: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--red) 8%, var(--paper)),
+      color-mix(in oklab, var(--red) 3%, var(--paper))
+    );
+  }
+  .compare-table tbody td.is-lychee::before {
+    color: var(--red);
+    font-style: italic;
   }
 
-  /* Soft separator between the sticky pair and the scrolling columns */
-  .compare-table thead th.is-lychee,
-  .compare-table tbody td.is-lychee {
-    box-shadow: 8px 0 12px -8px color-mix(in oklab, var(--ink) 18%, transparent);
+  /* No hover repaint on touch — keep card backgrounds steady */
+  .compare-table tbody tr:hover td.cmp-cell { background: transparent; }
+  .compare-table tbody tr:hover th.cmp-feat { background: var(--cream-deep); }
+  .compare-table tbody tr:hover td.is-lychee {
+    background: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--red) 8%, var(--paper)),
+      color-mix(in oklab, var(--red) 3%, var(--paper))
+    );
   }
 
-  .compare-table thead th.is-lychee::after {
-    bottom: -2px;
-  }
-
-  .cmp-feat-name {
-    font-size: 0.95rem;
-  }
-  .cmp-feat-desc {
-    font-size: 0.76rem;
+  /* Mark + qualifier ride together on the right of each line */
+  .cmp-glyph {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    order: 2;
   }
   .cmp-qual {
-    font-size: 0.7rem;
+    display: inline-block;
+    order: 1;
+    margin-top: 0;
+    font-size: 0.78rem;
   }
 }
 
