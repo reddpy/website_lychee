@@ -332,14 +332,14 @@ p {
 
 /* MANIFESTO */
 .manifesto {
-  padding-top: clamp(3rem, 6vw, 5rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
 }
 
 .section-title {
-  font-size: clamp(1.9rem, 4vw, 2.9rem);
-  line-height: 1.12;
-  letter-spacing: 0;
+  font-size: clamp(2.15rem, 4.6vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
   margin-top: 1rem;
   margin-bottom: 1.6rem;
 }
@@ -524,8 +524,8 @@ p {
 
 /* IN USE — grouped by aspect ratio */
 .motion {
-  padding-top: clamp(3rem, 7vw, 5rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
 }
 
 /* The title sitting above every GIF — the "showcase" headline */
@@ -576,7 +576,6 @@ p {
     0 1px 0 color-mix(in oklab, var(--ink) 4%, transparent),
     0 28px 60px -30px color-mix(in oklab, var(--ink) 30%, transparent);
 }
-
 /* A tall GIF — used in clusters next to a wide */
 .tall { margin: 0; }
 
@@ -653,8 +652,8 @@ p {
 
 /* ESSAY SECTION */
 .essay-section {
-  padding-top: clamp(3rem, 7vw, 5rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
 }
 
 .essay-head {
@@ -718,8 +717,8 @@ p {
    Desktop: 5-column grid. Mobile: horizontal scroll with the
    feature column and Lychee column pinned to the left edge. */
 .compare {
-  padding-top: clamp(3rem, 7vw, 5rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
 }
 
 .visually-hidden {
@@ -1164,8 +1163,8 @@ p {
 
 /* DOWNLOAD */
 .download {
-  padding-top: clamp(3rem, 7vw, 5rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
 }
 
 .download-scene {
