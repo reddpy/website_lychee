@@ -7,14 +7,14 @@
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="canonical" href="https://lycheenote.com/" />
         <title>
-            Lychee Note: Free Local-First Notes App for Mac, Windows &amp; Linux
+            Lychee: Free Local-First Notes App for Mac, Windows &amp; Linux
         </title>
         <meta
             name="description"
             content="A small, fast notebook for daily writing. Local-first. Free and open source. Runs on Mac, Windows, and Linux."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Lychee Note" />
+        <meta property="og:site_name" content="Lychee" />
         <meta property="og:url" content="https://lycheenote.com/" />
         <meta
             property="og:title"
@@ -32,7 +32,7 @@
         <meta property="og:image:height" content="630" />
         <meta
             property="og:image:alt"
-            content="Lychee Note: a free local-first notes app. Your words, your machine."
+            content="Lychee: a free local-first notes app. Your words, your machine."
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -50,7 +50,7 @@
         />
         <meta
             name="twitter:image:alt"
-            content="Lychee Note: a free local-first notes app. Your words, your machine."
+            content="Lychee: a free local-first notes app. Your words, your machine."
         />
 
         <meta name="theme-color" content="#F5F0DF" />
@@ -66,7 +66,7 @@
             {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
-                "name": "Lychee Note",
+                "name": "Lychee",
                 "applicationCategory": "ProductivityApplication",
                 "operatingSystem": "macOS, Windows, Linux",
                 "url": "https://lycheenote.com/",
@@ -121,9 +121,24 @@
                     </svg>
                     GitHub
                 </a>
-                <a href="#download" class="btn btn-primary btn-sm"
-                    >Alpha Coming Soon</a
-                >
+                <a href="#download" class="btn btn-primary btn-sm">
+                    <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                    Download Lychee
+                </a>
             </nav>
         </header>
 
@@ -142,10 +157,14 @@
                         tracking, no noise.
                     </p>
                     <div class="hero-actions">
-                        <a href="#download" class="btn btn-primary">
+                        <a
+                            href="#download"
+                            class="btn btn-primary"
+                            data-download
+                        >
                             <svg
-                                width="14"
-                                height="14"
+                                width="16"
+                                height="16"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 aria-hidden="true"
@@ -158,31 +177,23 @@
                                     stroke-linejoin="round"
                                 />
                             </svg>
-                            Alpha Coming Soon
-                        </a>
-                        <a
-                            href="https://github.com/reddpy/lychee"
-                            class="btn btn-ghost"
-                            rel="noopener"
-                        >
-                            <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 16 16"
-                                fill="currentColor"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                                />
-                            </svg>
-                            View on GitHub →
+                            Download Lychee
                         </a>
                     </div>
+                    <p class="hero-dlnote ui" data-download-note>
+                        for Mac, Windows &amp; Linux
+                    </p>
                     <p class="hero-foot ui">
-                        Mac, Windows, and Linux.
-                        <span aria-hidden="true">·</span> MIT licensed.
-                        <span aria-hidden="true">·</span> No sign-up.
+                        <span
+                            class="hero-foot-os"
+                            role="img"
+                            aria-label="Available for macOS, Windows, and Linux"
+                        >
+                            <span class="picon" data-picon="mac"></span>
+                            <span class="picon" data-picon="windows"></span>
+                            <span class="picon" data-picon="linux"></span>
+                        </span>
+                        <span aria-hidden="true">·</span> MIT license
                     </p>
                 </div>
             </section>
@@ -1119,16 +1130,19 @@
                         <h2 class="section-title small">
                             Taste <em>Lychee.</em>
                         </h2>
-                        <p class="measure">
-                            Made to stay free and yours.<br />
-                            On Mac, Windows, and Linux.
-                        </p>
                         <div class="download-actions">
                             <a
-                                href="https://github.com/reddpy/lychee/releases"
-                                class="btn btn-primary"
+                                href="https://github.com/reddpy/lychee/releases/download/v0.1.0-alpha.8/Lychee-0.1.0-alpha.8-arm64.dmg"
+                                class="dl-pill ui"
                                 rel="noopener"
+                                aria-label="Download for macOS"
                             >
+                                <span class="picon" data-picon="mac"></span>
+                                macOS
+                                <span
+                                    class="dl-pill-rule"
+                                    aria-hidden="true"
+                                ></span>
                                 <svg
                                     width="14"
                                     height="14"
@@ -1144,27 +1158,107 @@
                                         stroke-linejoin="round"
                                     />
                                 </svg>
-                                Alpha Coming Soon
                             </a>
                             <a
-                                href="https://github.com/reddpy/lychee"
-                                class="btn btn-ghost"
+                                href="https://github.com/reddpy/lychee/releases/download/v0.1.0-alpha.8/Lychee-0.1.0-alpha.8.Setup.exe"
+                                class="dl-pill ui"
                                 rel="noopener"
+                                aria-label="Download for Windows"
                             >
+                                <span class="picon" data-picon="windows"></span>
+                                Windows
+                                <span
+                                    class="dl-pill-rule"
+                                    aria-hidden="true"
+                                ></span>
                                 <svg
                                     width="14"
                                     height="14"
-                                    viewBox="0 0 16 16"
-                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
                                     aria-hidden="true"
                                 >
                                     <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                        d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
                                     />
                                 </svg>
-                                Browse the source →
+                            </a>
+                            <a
+                                href="https://github.com/reddpy/lychee/releases/download/v0.1.0-alpha.8/lychee_0.1.0.alpha.8_amd64.deb"
+                                class="dl-pill ui"
+                                rel="noopener"
+                                aria-label="Download for Linux (.deb)"
+                            >
+                                <span class="picon" data-picon="linux"></span>
+                                Linux (.deb)
+                                <span
+                                    class="dl-pill-rule"
+                                    aria-hidden="true"
+                                ></span>
+                                <svg
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://github.com/reddpy/lychee/releases/download/v0.1.0-alpha.8/lychee-0.1.0.alpha.8-1.x86_64.rpm"
+                                class="dl-pill ui"
+                                rel="noopener"
+                                aria-label="Download for Linux (.rpm)"
+                            >
+                                <span class="picon" data-picon="linux"></span>
+                                Linux (.rpm)
+                                <span
+                                    class="dl-pill-rule"
+                                    aria-hidden="true"
+                                ></span>
+                                <svg
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
                             </a>
                         </div>
+                        <p class="download-meta ui">
+                            v0.1.0-alpha.8
+                            <span aria-hidden="true">·</span>
+                            <a
+                                href="https://github.com/reddpy/lychee/releases"
+                                rel="noopener"
+                                >all releases</a
+                            >
+                            <span aria-hidden="true">·</span>
+                            <a
+                                href="https://github.com/reddpy/lychee"
+                                rel="noopener"
+                                >browse the source</a
+                            >
+                        </p>
                     </div>
                 </div>
             </section>
