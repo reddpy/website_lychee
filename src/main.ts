@@ -26,7 +26,7 @@ document.querySelectorAll<HTMLImageElement>("[data-shot]").forEach((img) => {
 
 // --- Platform-aware download buttons ---
 const DOWNLOAD_BASE =
-  "https://github.com/reddpy/lychee/releases/download/v0.1.0-alpha.8/";
+  "https://github.com/reddpy/lychee/releases/download/v0.1.0-alpha.9/";
 
 const brandIcon = (svg: string) =>
   svg.replace(
@@ -59,10 +59,10 @@ function detectOS(): OS | null {
 const os = detectOS();
 
 const FILES = {
-  dmg: "Lychee-0.1.0-alpha.8-arm64.dmg",
-  exe: "Lychee-0.1.0-alpha.8.Setup.exe",
-  deb: "lychee_0.1.0.alpha.8_amd64.deb",
-  rpm: "lychee-0.1.0.alpha.8-1.x86_64.rpm",
+  dmg: "Lychee-0.1.0-alpha.9-arm64.dmg",
+  exe: "Lychee-0.1.0-alpha.9.Setup.exe",
+  deb: "lychee_0.1.0.alpha.9_amd64.deb",
+  rpm: "lychee-0.1.0.alpha.9-1.x86_64.rpm",
 };
 
 // Hero: direct download where there's a single obvious artifact, otherwise
